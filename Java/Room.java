@@ -5,7 +5,7 @@
 import java.util.*;
 
 // line 2 "model.ump"
-// line 50 "model.ump"
+// line 80 "model.ump"
 public class Room
 {
 
@@ -130,17 +130,21 @@ public class Room
    public String getRoomDescription(){
     String base = "I'm in a room. I see:\n";
            for(GameFixture fixture : fixtures){
-             base += (fixture.getFixtureDescription() + "\n");
+             base += (fixture.getFullFixtureDescription() + "\n");
            }
      	return base;
   }
 
   // line 20 "model.ump"
    public void playScenario(){
-    TreasureChest chest = new TreasureChest("A large and heavy treasure chest.");
+    TreasureChest chest = new TreasureChest("A large and heavy treasure chest. ");
+        Wardrobe wardrobe = new Wardrobe("A mysterious wooden wardrobe. ");
+        
         addFixture(chest);
+        addFixture(wardrobe);
       	System.out.println(getRoomDescription());
         chest.setOpen(true);
+        wardrobe.setLocked(false);
         System.out.println(getRoomDescription());
   }
 

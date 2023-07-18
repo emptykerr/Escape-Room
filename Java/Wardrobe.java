@@ -3,48 +3,48 @@
 
 
 
-// line 49 "model.ump"
-// line 91 "model.ump"
-public class TreasureChest extends GameFixture
+// line 61 "model.ump"
+// line 96 "model.ump"
+public class Wardrobe extends GameFixture
 {
 
   //------------------------
   // MEMBER VARIABLES
   //------------------------
 
-  //TreasureChest Attributes
-  private boolean open;
+  //Wardrobe Attributes
+  private boolean locked;
 
   //------------------------
   // CONSTRUCTOR
   //------------------------
 
-  public TreasureChest(String aFixtureDescription)
+  public Wardrobe(String aFixtureDescription)
   {
     super(aFixtureDescription);
-    open = false;
+    locked = true;
   }
 
   //------------------------
   // INTERFACE
   //------------------------
 
-  public boolean setOpen(boolean aOpen)
+  public boolean setLocked(boolean aLocked)
   {
     boolean wasSet = false;
-    open = aOpen;
+    locked = aLocked;
     wasSet = true;
     return wasSet;
   }
 
-  public boolean getOpen()
+  public boolean getLocked()
   {
-    return open;
+    return locked;
   }
   /* Code from template attribute_IsBoolean */
-  public boolean isOpen()
+  public boolean isLocked()
   {
-    return open;
+    return locked;
   }
 
   public void delete()
@@ -52,15 +52,20 @@ public class TreasureChest extends GameFixture
     super.delete();
   }
 
-  // line 55 "model.ump"
+  // line 67 "model.ump"
    public String getExtraFixtureDescription(){
-    return getOpen() ? "It contains the room key!" : "It's lid is closed.";
+    return "It is " + doorDescription();
+  }
+
+  // line 71 "model.ump"
+   private String doorDescription(){
+    return getLocked() ? "locked" : "unlocked";
   }
 
 
   public String toString()
   {
     return super.toString() + "["+
-            "open" + ":" + getOpen()+ "]";
+            "locked" + ":" + getLocked()+ "]";
   }
 }
