@@ -5,7 +5,7 @@
 import java.util.*;
 
 // line 2 "model.ump"
-// line 38 "model.ump"
+// line 50 "model.ump"
 public class Room
 {
 
@@ -137,9 +137,11 @@ public class Room
 
   // line 20 "model.ump"
    public void playScenario(){
-    GameFixture chest = new GameFixture("A large and heavy treasure chest.");
+    TreasureChest chest = new TreasureChest("A large and heavy treasure chest.");
         addFixture(chest);
       	System.out.println(getRoomDescription());
+        chest.setOpen(true);
+        System.out.println(getRoomDescription());
   }
 
 }

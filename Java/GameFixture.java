@@ -3,8 +3,8 @@
 
 
 
-// line 28 "model.ump"
-// line 44 "model.ump"
+// line 30 "model.ump"
+// line 56 "model.ump"
 public class GameFixture
 {
 
